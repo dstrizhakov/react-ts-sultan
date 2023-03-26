@@ -1,4 +1,5 @@
-[
+{
+	"products":[
 	{
 	"id": 1,
 	"img": "https://ir.ozone.ru/multimedia/wc1000/1023617947.jpg",
@@ -247,3 +248,4 @@
 	"price": "288"
 }
 ]
+}

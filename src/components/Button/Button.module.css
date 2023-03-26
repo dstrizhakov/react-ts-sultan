@@ -1,0 +1,20 @@
+.button {
+	cursor: pointer;
+	margin: 5px 10px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	padding: 20px 40px;
+	min-width: 192px;
+	background-color: #FFC85E;
+	border-radius: 79px;
+	transition: all 0.3s ease 0s;
+}
+.button:hover {
+	background-color: #f7d185;
+}
+.button span {
+	font-weight: 700;
+	color: #ffffff;
+}

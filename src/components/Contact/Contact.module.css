@@ -1,0 +1,40 @@
+.dark {
+	display: flex;
+	margin-right: 40px;
+	padding: 5px 0;
+}
+.dark a {
+	margin-left: 15px;
+}
+.dark a span {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 130.02%;
+	color: #111111;
+	}
+.dark a p {
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 130.02%;
+	color: #3F4E65;
+}
+.white {
+	display: flex;
+	margin-right: 40px;
+	padding: 5px 0;
+}
+.white a {
+	margin-left: 15px;
+}
+.white a span {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 130.02%;
+	color: #ffffff;
+	}
+.white a p {
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 130.02%;
+	color: #ffffff;
+}

@@ -8,7 +8,7 @@ const Layout: FC = () => {
 		<div className="wrapper">
 			<Header />
 			<main className="main">
-				<div className="main__container">
+				<div className="container">
 					<Outlet />
 				</div>
 			</main>

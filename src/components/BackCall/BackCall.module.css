@@ -1,0 +1,54 @@
+.call {
+	margin: 5px 10px;
+	display: flex;
+	align-items: center;
+}
+.dark {
+margin-right: 10px;
+text-align: right;
+}
+
+.dark span {
+	font-size: 14px;
+	line-height: 150%;
+	color: #111111;
+	font-weight: 600;
+}
+.dark p {
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 150%;
+	color: #3F4E65;
+}
+
+.dark a {
+	line-height: 150%;
+	text-decoration-line: underline;
+	color: #3F4E65;
+	font-size: 10px;
+}
+
+.white {
+	margin-right: 10px;
+	text-align: right;
+	}
+	
+	.white span {
+		font-size: 14px;
+		line-height: 150%;
+		color: #ffffff;
+		font-weight: 600;
+	}
+	.white p {
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 150%;
+		color: #ffffff;
+	}
+	
+	.white a {
+		line-height: 150%;
+		text-decoration-line: underline;
+		color: #ffffff;
+		font-size: 10px;
+	}
