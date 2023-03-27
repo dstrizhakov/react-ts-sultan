@@ -15,7 +15,7 @@ const Footer: FC  = () => {
 						<img src={logo} alt="logo" />
 						<p>Компания «Султан» — снабжаем розничные магазины товарами 
 							"под ключ" в Кокчетаве и Акмолинской области</p>
-							<span>Подпишись на скидки и акции</span>
+						<span>Подпишись на скидки и акции</span>
 						<div className={styles.subscribe}>
 							<input type="text" placeholder="Введите ваш E-mail..."/>
 							<span><img src={arrowIcon} alt="arrow icon" /></span>

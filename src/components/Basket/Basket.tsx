@@ -10,7 +10,7 @@ type BasketPropsType = {
 }
 
 const Basket: FC<BasketPropsType> = ({count, total}) => {
-	const {} = useAppSelector(state => state.productReducer)
+
 	return (
 		<div className={styles.order}>
 		<div className={styles.busket}>
