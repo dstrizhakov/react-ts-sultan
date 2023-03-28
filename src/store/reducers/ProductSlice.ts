@@ -35,7 +35,7 @@ export const productSlice = createSlice({
 		[fetchProducts.fulfilled.type]: (state, action: PayloadAction<IProduct[]>) => {
 			state.isLoading = false;
 			state.error = '';
-			state.products = action.payload;
+			// state.products = action.payload;
 		},
 		[fetchProducts.pending.type]: (state, action: PayloadAction<string>) => {
 			state.isLoading = true;

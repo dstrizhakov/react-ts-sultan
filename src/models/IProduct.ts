@@ -9,5 +9,5 @@ export interface IProduct {
 	brand: string;
 	description: string;
 	type:string[];
-	price: string;
+	price: number;
 }

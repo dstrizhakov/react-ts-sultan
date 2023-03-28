@@ -1,6 +1,7 @@
 .footer {
 	background-color: #3F4E65;
 	color: #ffffff;
+	position: relative;
 }
 .footer h3 {
 font-weight: 600;
@@ -100,4 +101,32 @@ flex: 0 1 320px;
 .button span {
 	font-weight: 700;
 	color: #ffffff;
+}
+
+@media (max-width: 492px) {
+	.row {
+		padding: 70px 0;
+	}
+	.subscribe {
+		width: 100%;
+	}
+	/* .about {
+		order: 0;
+	}
+	.menu {
+		order: 2;
+	}
+	.category {
+		order: 2;
+	}
+	.contact {
+		order: 2;
+	} */
+	.price {
+		position: absolute;
+		right: 10px;
+	}
+	.price h3 {
+		display: none;
+	}
 }

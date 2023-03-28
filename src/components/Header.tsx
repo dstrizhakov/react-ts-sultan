@@ -8,8 +8,13 @@ import Button from "./Button/Button";
 import Basket from "./Basket/Basket";
 import BackCall from "./BackCall/BackCall";
 import Contact from "./Contact/Contact";
+import { Link } from "react-router-dom";
+import { useAppSelector } from "../hooks/redux";
 
 const Header: FC = () => {
+	const busketCount = useAppSelector(state => state.mainReducer.totalCount);
+	const busketTotal = useAppSelector(state => state.mainReducer.totalPrice);
+	console.log(busketTotal);
 	return (
 		<header className={styles.header}>
 			<div className={styles.border}>
@@ -31,29 +36,22 @@ const Header: FC = () => {
 			<div className={styles.border}>
 				<div className="container">
 					<div className={styles.bottom}>
+						<Link to={"/"}>
 						<a href="##" className={styles.logo}>
 							<img src={logo} alt="logo" />
 						</a>
-						<Button text="Каталог" img="catalog" />
+						</Link>
+						<Link to={"/catalog"}><Button text="Каталог" img="catalog" /></Link>
 						<div className={styles.search}>
 							<input type="text" placeholder="Поиск..."/>
 							<span><img src={searchIcon} alt="searchIcon" /></span>
 						</div>
-						{/* <div className={styles.call}>
-							<div className={styles.callback}>
-								<span>+7 (777) 490-00-91</span>
-								<p>время работы: 9:00-20:00</p>
-								<a href="##">Заказать звонок</a>
-							</div>
-							<img src={supportIcon} alt="supportIcon" />
-						</div> */}
 						<BackCall isImg={true} variant="dark"/>
 						<Button text="Прайс-лист" img="download" />
-						<Basket count={3} total={12478} />
+						<Basket count={busketCount} total={busketTotal} />
 					</div>
 				</div>
-			</div>
-			
+			</div>	
 		</header>
 	)
 }

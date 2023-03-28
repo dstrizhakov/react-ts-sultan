@@ -1,10 +1,13 @@
 import { FC } from "react";
+import ProductList from "../components/ProductList/ProductList";
 
 const Catalog: FC = () => {
 	return (
-		<div>
-			<h1>Catalog</h1>
-		</div>
+		<main className="main">
+			<p>Catalog</p>
+			<div className="calalog"></div>
+			<ProductList/>
+		</main>
 	)
 }
 

@@ -9,9 +9,9 @@ const Home: FC = () => {
 	// const dispatch = useAppDispatch();
 
 	return (
-		<div>
-			<ProductList text="Title"/>
-		</div>
+		<main className="main">
+			<h1>Home</h1>
+		</main>
 	)
 }
 

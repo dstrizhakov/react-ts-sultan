@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { productAPI } from "../services/ProductService";
-import productReducer from './reducers/ProductSlice';
+import mainReducer from './reducers/mainSlice';
 
 const rootReducer = combineReducers({
-	// productReducer,
+	mainReducer,
 	[productAPI.reducerPath]: productAPI.reducer
 
 })

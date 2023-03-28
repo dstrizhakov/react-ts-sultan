@@ -6,13 +6,14 @@ import busketIcon from "../../assets/icons/basket-white.svg"
 
 type ButtonPropsType = {
 	text: string;
-	img: "catalog"|"download"|"basket"|"none";
+	img?: "catalog"|"download"|"basket";
 	type?: "small";
+	onClick?:()=> void;
 }
 
-const Button: FC<ButtonPropsType> = ({text, img, type}) => {
+const Button: FC<ButtonPropsType> = ({text, img, type, onClick}) => {
 	return (
-		<div className={type === "small" ? styles.buttonSmall: styles.button}>
+		<div onClick={onClick} className={type === "small" ? styles.buttonSmall: styles.button}>
 			<span>{text}</span>
 			{(() => {
         switch (img) {
@@ -22,8 +23,6 @@ const Button: FC<ButtonPropsType> = ({text, img, type}) => {
             return <img src={downloadIcon} alt="downloadIcon" />
           case "basket":
             return <img src={busketIcon} alt="busketIcon" />
-          case "none":
-            return null
           default:
             return null
         }
