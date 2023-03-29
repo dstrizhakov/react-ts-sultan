@@ -2,8 +2,9 @@ import { FC, useState } from 'react';
 import { IProduct } from '../../../models/IProduct';
 import { productAPI } from '../../../services/ProductService';
 import Button from '../../Button/Button';
+import styles from "./CreateEditProduct.module.css"
 import ProductForm from '../ProductForm/ProductForm';
-import styles from "./CreateProductForm.module.css"
+import Modal from '../../Modal/Modal';
 
 const mockProduct: IProduct = {
 	id: 1,
@@ -16,24 +17,39 @@ const mockProduct: IProduct = {
 	brand: "Poshone",
 	description: "Основные свойства: - концентрированный стиральный порошок для эффективной стирки белого белья; - адаптирован для стирки детского белья (не содержит эко-токсичных компонентов и нерастворимых наполнителей (цеолитов); - без фосфатов, без сульфанолов, без хлора, без оптических отбеливателей; - содержит кислородный эко-отбеливатель TOTAL OXYGEN®;",
 	type:["Моющее средство", "Стиральный порошок"],
-	price: "48,76"
+	price: 48.76
 	}
 
-const CreateProductForm: FC = () => {
+	type CreateProductPropsType ={
+		mode: 'create'|'edit';
+		product?: IProduct;
+	}
+
+const CreateProduct: FC<CreateProductPropsType> = ({mode, product}) => {
 	const [createProduct, {error, isLoading}] = productAPI.useCreateProductMutation()
-	const [formProduct, setFormProduct] = useState<IProduct>()
+	const [isOpen, setIsOpen] = useState(false);
+
 
 	const handleCreateProduct =  async () => {
 		mockProduct.id = +Date.now();
 		await createProduct(mockProduct)
 		}
+		
+	const handleOpenModal = () => {
+		setIsOpen(true);
+	}
 
 	return (
 		<div className={styles.body}>
-			<ProductForm/>
-			<Button onClick={handleCreateProduct} text='Создать товар' type='small'/>
+			<Button onClick={handleOpenModal} text={mode === 'create'?'Создать товар':'Изменить'} type='small'/>
+			<Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+				{mode === 'create' 
+				? <ProductForm action='create' setIsOpen={setIsOpen}/>
+				: <ProductForm action='edit' setIsOpen={setIsOpen} product={product}/>
+				}
+			</Modal>
 		</div>
 	);
 }
 
-export default CreateProductForm;
+export default CreateProduct;

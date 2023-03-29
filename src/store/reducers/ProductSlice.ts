@@ -1,3 +1,4 @@
+//================= УДАЛИТЬ ЭТОТ ФАЙЛ В КОНЦЕ
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IProduct } from "../../models/IProduct"
 import { fetchProducts } from "./ActionCreators";

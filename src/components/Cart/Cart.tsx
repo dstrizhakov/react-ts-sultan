@@ -1,15 +1,13 @@
 import { FC } from 'react';
-import styles from "./Basket.module.css"
+import styles from "./Cart.module.css"
 import busketIcon from "../../assets/icons/basket.svg"
-import { useAppSelector } from '../../hooks/redux';
 
-
-type BasketPropsType = {
+type CartPropsType = {
 	count: number;
 	total: number;
 }
 
-const Basket: FC<BasketPropsType> = ({count, total}) => {
+const Cart: FC<CartPropsType> = ({count, total}) => {
 
 	return (
 		<div className={styles.order}>
@@ -25,4 +23,4 @@ const Basket: FC<BasketPropsType> = ({count, total}) => {
 	);
 }
 
-export default Basket;
+export default Cart;

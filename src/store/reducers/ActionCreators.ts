@@ -1,9 +1,9 @@
+//================= УДАЛИТЬ ЭТОТ ФАЙЛ В КОНЦЕ
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { IProduct } from "../../models/IProduct";
 import { AppDispatch } from "../store";
 import { productSlice } from "./ProductSlice";
-
 
 // export const fetchProducts = () => async (dispatch: AppDispatch) => {
 // 	try {

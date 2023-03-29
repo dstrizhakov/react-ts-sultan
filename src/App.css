@@ -25,5 +25,28 @@ body {
 
 .main {
 	margin-top: 45px;
+}.main h2 {
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 120%;
+	text-transform: uppercase;
+	color: #111111;
+	margin: 50px 0 25px 0;
 }
+
+.breadcrumbs {
+	display: flex;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 120%;
+	color: #3F4E65;
+}
+.breadcrumbs p:not(:last-child) {
+	padding-right: 10px;
+	border-right: 1px dashed #3f4e657f;
+}
+.breadcrumbs span {
+	padding-left: 10px;
+	opacity: 0.5;
+	}
 

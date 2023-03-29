@@ -12,7 +12,7 @@
 	transition: all 0.3s ease 0s;
 }
 .button:hover {
-	background-color: #f7d185;
+	background-color: #fbb323;
 }
 .button span {
 	font-weight: 700;
@@ -34,7 +34,7 @@
 }
 
 .buttonSmall:hover {
-	background-color: #f7d185;
+	background-color: #fbb323;
 }
 .buttonSmall span {
 	font-weight: 700;

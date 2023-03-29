@@ -1,10 +1,10 @@
 import { FC } from "react";
 import styles from "./Footer.module.css"
-import logo from "../assets/logo.svg"
-import arrowIcon from "../assets/icons/arrow.svg"
-import BackCall from "./BackCall/BackCall";
-import Button from "./Button/Button";
-import Contact from "./Contact/Contact";
+import logo from "../../assets/logo.svg"
+import arrowIcon from "../../assets/icons/arrow.svg"
+import BackCall from "../BackCall/BackCall";
+import Button from "../Button/Button";
+import Contact from "../Contact/Contact";
 
 const Footer: FC  = () => {
 	return (

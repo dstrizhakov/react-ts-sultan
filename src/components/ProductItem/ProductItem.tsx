@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
-import { useAppDispatch } from '../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { IProduct } from '../../models/IProduct';
-import { addProductToCart } from '../../store/reducers/mainSlice';
+import { addToCart } from '../../store/reducers/Cart/cart.slice';
+import CreateProduct from '../Admin/CreateEditProduct/CreateEditProduct';
 import Button from '../Button/Button';
+import boxImage from "../../assets/icons/box.svg"
+import bottleImage from "../../assets/icons/bottle.svg"
 import styles from "./ProductItem.module.css"
 
 type ProductItemPropsType = {
@@ -16,24 +19,27 @@ const ProductItem: FC<ProductItemPropsType> = ({product, remove, update}) => {
 	const {id, img, title, valueType, value, barcode, manufacturer, brand, description, type, price } = product;
 	
 	const dispatch = useAppDispatch();
+	const isAdmin = useAppSelector(state => state.userReducer.isAdmin)
 
-	const handleRemove = (event: React.MouseEvent) => {
-		event.preventDefault();
+	const handleRemove = () => {
 		remove(product);
 	}
-	const handleUpdate = (event: React.MouseEvent) => {
-		event.preventDefault();
-		update(product);
-	}
+	// const handleUpdate = (event: React.MouseEvent) => {
+	// 	event.preventDefault();
+	// 	update(product);
+	// }
 	return (
 		<div className={styles.body}> 
-			<span onClick={handleRemove} className={styles.delete}>Удалить</span>
-			<span onClick={handleUpdate} className={styles.update}>Изменить</span>
+		{isAdmin && <div className={styles.admin}>
+			<CreateProduct mode='edit' product={product}/>
+			<Button onClick={handleRemove} text='Удалить' type='small'/>
+		</div>}
 			<div className={styles.content}>
 				<div className={styles.image}>
 					<img src={img} alt="product image" />
 				</div>
 				<div className={styles.value}>
+				<img src={valueType ==='volume'? bottleImage : boxImage} alt="value type" />
 					<span>{value}</span>
 				</div>
 				<div className={styles.title}>
@@ -54,7 +60,7 @@ const ProductItem: FC<ProductItemPropsType> = ({product, remove, update}) => {
 				</div>
 				<div className={styles.basket}>
 					<p>{price}</p>
-					<Button onClick={()=>dispatch(addProductToCart({ id, count: 1 }))} text='В корзину' img='basket' type='small'/>
+					<Button onClick={()=>dispatch(addToCart({ id, product, count: 1 }))} text='В корзину' img='basket' type='small'/>
 				</div>
 			</div>
 		</div>
