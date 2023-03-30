@@ -1,4 +1,6 @@
 import { FC } from "react";
+import Filters from "../components/Filters/Filters/Filters";
+import Sort from "../components/Filters/Sort/Sort";
 import ProductList from "../components/ProductList/ProductList";
 
 const Catalog: FC = () => {
@@ -8,9 +10,15 @@ const Catalog: FC = () => {
 				<p>Главная</p>
 				<span>Каталог</span>
 			</div>
-			<h2>Косметика и гигиена</h2>
-			<div className="calalog"></div>
-			<ProductList/>
+			<div className="row">	
+				<h2>Косметика и гигиена</h2>
+				<Sort/>
+			</div>
+			<div className="calalog">
+				<Filters/>
+				<ProductList/>
+			</div>
+		
 		</main>
 	)
 }

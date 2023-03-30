@@ -26,7 +26,6 @@ const ProductForm: FC<ProductFormPropsType> = ({product, action, setIsOpen}) => 
 	const [updateProduct, {error: updateError, isLoading: updateIsLoading}] = productAPI.useUpdateProductMutation()
 	const [createProduct, {error: createError, isLoading: createIsLoading}] = productAPI.useCreateProductMutation()
 
-	console.log('props', product);
 
 	const handleCreateProduct =  async (product: IProduct) => {
 		await createProduct(product)

@@ -24,15 +24,12 @@ const ProductItem: FC<ProductItemPropsType> = ({product, remove, update}) => {
 	const handleRemove = () => {
 		remove(product);
 	}
-	// const handleUpdate = (event: React.MouseEvent) => {
-	// 	event.preventDefault();
-	// 	update(product);
-	// }
+	
 	return (
 		<div className={styles.body}> 
 		{isAdmin && <div className={styles.admin}>
 			<CreateProduct mode='edit' product={product}/>
-			<Button onClick={handleRemove} text='Удалить' type='small'/>
+			<Button onClick={handleRemove} img='remove' type='small'/>
 		</div>}
 			<div className={styles.content}>
 				<div className={styles.image}>
@@ -60,7 +57,7 @@ const ProductItem: FC<ProductItemPropsType> = ({product, remove, update}) => {
 				</div>
 				<div className={styles.basket}>
 					<p>{price}</p>
-					<Button onClick={()=>dispatch(addToCart({ id, product, count: 1 }))} text='В корзину' img='basket' type='small'/>
+					<Button onClick={()=>dispatch(addToCart({ id, product, count: 1 }))} text='В КОРЗИНУ' img='basket' type='small'/>
 				</div>
 			</div>
 		</div>

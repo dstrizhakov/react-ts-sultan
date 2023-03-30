@@ -47,5 +47,5 @@
 	left: 18px;
 }
 .checkbox:checked + label::before {
-	background-color: #ffbf00;
+	background-color: #ff0000;
 }

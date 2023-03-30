@@ -19,7 +19,7 @@ const SwitchAdmin: FC = () => {
 				checked={checked} 
 				onChange={changeCheckbox}
 			></input>
-			<label htmlFor="isAdmin">isAdmin</label>
+			<label htmlFor="isAdmin">Админ</label>
 		</div>
 	);
 }

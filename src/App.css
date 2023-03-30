@@ -49,4 +49,14 @@ body {
 	padding-left: 10px;
 	opacity: 0.5;
 	}
+.row {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.calalog {
+	display: flex;
+}
+
 
