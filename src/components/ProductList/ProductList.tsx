@@ -31,7 +31,8 @@ const ProductList: FC<ProductListPropsType> = ({text}) => {
 
 	useEffect(()=>{
 		handleFilters();
-	}, [ products, filterPrice, sortTarget, sortType])
+	}, [ products, filterPrice, sortTarget, sortType ])
+
 
 	const handleFilters = () => {
 		let filtered = products?.filter((prod) => prod.price>filterPrice[0]&&prod.price<filterPrice[1])

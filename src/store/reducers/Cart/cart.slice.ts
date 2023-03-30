@@ -14,11 +14,12 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<ICartItem>) => {
+			console.log(action.payload)
       const itemIndex = state.cartList.findIndex(
         (item) => item.id === action.payload.id
       );
       itemIndex >= 0
-        ? (state.cartList[itemIndex].count += 1)
+        ? (state.cartList[itemIndex].count += action.payload.count)
         : state.cartList.push({ ...action.payload });
       cartSlice.caseReducers.calculateCountAndPrice(state);
     },

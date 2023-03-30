@@ -2,9 +2,13 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
 }
 .body {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+}
+.body h3 {
+	text-align: center;
 }

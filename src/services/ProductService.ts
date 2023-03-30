@@ -15,6 +15,11 @@ export const productAPI = createApi({
 			}),
 			providesTags: result => ['Product']
 		}),
+		fetchOneProduct: build.query<IProduct, number>({
+			query: (id:number) => ({
+				url: `/products/${id}`
+			})
+		}),
 		createProduct: build.mutation<IProduct, IProduct>({
 			query: (product) => ({
 				url: '/products',

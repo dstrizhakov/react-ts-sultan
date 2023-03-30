@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { IProduct } from '../../models/IProduct';
 import { addToCart } from '../../store/reducers/Cart/cart.slice';
@@ -7,6 +7,7 @@ import Button from '../Button/Button';
 import boxImage from "../../assets/icons/box.svg"
 import bottleImage from "../../assets/icons/bottle.svg"
 import styles from "./ProductItem.module.css"
+import { useNavigate } from 'react-router-dom';
 
 type ProductItemPropsType = {
 	product: IProduct;
@@ -16,6 +17,9 @@ type ProductItemPropsType = {
 
 
 const ProductItem: FC<ProductItemPropsType> = ({product, remove, update}) => {
+
+	const navigate = useNavigate();
+
 	const {id, img, title, valueType, value, barcode, manufacturer, brand, description, type, price } = product;
 	
 	const dispatch = useAppDispatch();
@@ -24,7 +28,9 @@ const ProductItem: FC<ProductItemPropsType> = ({product, remove, update}) => {
 	const handleRemove = () => {
 		remove(product);
 	}
-	
+	const pushAddress = () =>{
+		navigate(`/catalog/${product.id}`)
+}
 	return (
 		<div className={styles.body}> 
 		{isAdmin && <div className={styles.admin}>
@@ -32,7 +38,7 @@ const ProductItem: FC<ProductItemPropsType> = ({product, remove, update}) => {
 			<Button onClick={handleRemove} img='remove' type='small'/>
 		</div>}
 			<div className={styles.content}>
-				<div className={styles.image}>
+				<div onClick={pushAddress} className={styles.image}>
 					<img src={img} alt="product image" />
 				</div>
 				<div className={styles.value}>

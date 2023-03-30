@@ -42,11 +42,12 @@ body {
 	color: #3F4E65;
 }
 .breadcrumbs p:not(:last-child) {
-	padding-right: 10px;
+	padding: 0 10px;
 	border-right: 1px dashed #3f4e657f;
+	cursor: pointer;
 }
 .breadcrumbs span {
-	padding-left: 10px;
+	padding: 0 10px;
 	opacity: 0.5;
 	}
 .row {
