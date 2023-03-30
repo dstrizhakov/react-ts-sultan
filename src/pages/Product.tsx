@@ -22,7 +22,7 @@ const Product: FC = () => {
 			</div>
 			{isLoading && <h3>Загрузка...</h3>}
 			{error && <h3>Ошибка!</h3>}
-			{!isLoading && <ProductAbout product={product}/>}
+			{!isLoading && product && <ProductAbout product={product}/>}
 		</main>
 	)
 }
