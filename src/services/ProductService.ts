@@ -13,7 +13,7 @@ export const productAPI = createApi({
           _limit: limit,
         },
       }),
-      providesTags: (result) => ['Product'],
+      providesTags: () => ['Product'],
     }),
     fetchOneProduct: build.query<IProduct, number>({
       query: (id: number) => ({

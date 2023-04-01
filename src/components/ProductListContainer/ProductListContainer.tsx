@@ -20,7 +20,7 @@ const ProductListContainer: FC = () => {
       dispatch(setLocalProducts(mock.products));
       dispatch(setIsServerOnline(false));
     }
-  }, [products]);
+  }, []);
 
   return (
     <div className={styles.wrapper}>

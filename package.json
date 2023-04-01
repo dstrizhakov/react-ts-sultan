@@ -2,10 +2,14 @@
   "name": "react-ts-sultan",
   "private": true,
   "version": "0.0.0",
+	"homepage": "https://dstrizhakov.github.io/react-ts-sultan",
+	"proxy": "http://localhost:7000/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "server": "json-server -w server/db.json --port 7000"
   },

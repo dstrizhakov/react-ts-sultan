@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ProductAbout from '../components/ProductAbout/ProductAbout';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { IProduct } from '../models/IProduct';
-import { productAPI } from '../services/ProductService';
+// import { productAPI } from '../services/ProductService';
 import { setIsServerOnline } from '../store/reducers/User/user.slice';
 
 const Product: FC = () => {
@@ -13,22 +13,25 @@ const Product: FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const { error, isLoading, data: product } = productAPI.useFetchOneProductQuery(Number(id));
+  const product = undefined;
+  // const { error, isLoading, data: product } = productAPI.useFetchOneProductQuery(Number(id));
   const localProducts = useAppSelector((state) => state.productReducer.products);
-  const isOnline = useAppSelector((state) => state.userReducer.isServerOnline);
+  // const isOnline = useAppSelector((state) => state.userReducer.isServerOnline);
 
   const setLocalProduct = (id: number) => {
     setCurrentProduct(localProducts.find((item) => item.id === id));
   };
 
   useEffect(() => {
-    if (isOnline) {
-      setCurrentProduct(product);
-      dispatch(setIsServerOnline(true));
-    } else {
-      setLocalProduct(Number(id));
-      dispatch(setIsServerOnline(false));
-    }
+    // if (isOnline) {
+    //   setCurrentProduct(product);
+    //   dispatch(setIsServerOnline(true));
+    // } else {
+    //   setLocalProduct(Number(id));
+    //   dispatch(setIsServerOnline(false));
+    // }
+    setLocalProduct(Number(id));
+    dispatch(setIsServerOnline(false));
   }, []);
 
   const goBack = () => {
@@ -40,10 +43,10 @@ const Product: FC = () => {
       <div className="breadcrumbs">
         <p>Главная</p>
         <p onClick={goBack}>Каталог</p>
-        <span>{product?.title}</span>
+        <span>{currentProduct?.title}</span>
       </div>
-      {isLoading && <h3>Загрузка...</h3>}
-      {error && <h3></h3>}
+      {/* {isLoading && <h3>Загрузка...</h3>}
+      {error && <h3></h3>} */}
       {currentProduct && <ProductAbout product={currentProduct} />}
     </main>
   );
