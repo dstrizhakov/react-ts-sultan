@@ -1,19 +1,23 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IUser } from "../../../models/IUser";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IUser } from '../../../models/IUser';
 
 const initialState: IUser = {
-  isAdmin: false
+  isAdmin: false,
+  isServerOnline: false,
 };
 
 export const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState,
   reducers: {
     setIsAdmin: (state, action: PayloadAction<boolean>) => {
-			state.isAdmin = action.payload
-    }
+      state.isAdmin = action.payload;
+    },
+    setIsServerOnline: (state, action: PayloadAction<boolean>) => {
+      state.isServerOnline = action.payload;
+    },
   },
 });
 
-export const { setIsAdmin } = userSlice.actions;
+export const { setIsAdmin, setIsServerOnline } = userSlice.actions;
 export default userSlice.reducer;

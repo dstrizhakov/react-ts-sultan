@@ -1,7 +1,7 @@
-import { IProduct } from "./IProduct";
+import { IProduct } from './IProduct';
 
-export interface  ICartItem {
+export interface ICartItem {
   id: number;
-	product: IProduct;
+  product: IProduct;
   count: number;
-};
+}

@@ -1,5 +1,6 @@
 export interface IFilters {
-	price: number[];
-	sortTarget: boolean;
-	sortType: boolean;
+  price: number[];
+  sort: boolean[];
+  sortTarget: boolean;
+  sortType: boolean;
 }

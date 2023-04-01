@@ -1,6 +1,5 @@
-import { ICartItem } from "../../../models/ICartItem";
-
+import { ICartItem } from '../../../models/ICartItem';
 
 export interface IChangeQuantityPayload extends Pick<ICartItem, 'id'> {
-	type: 'minus' | 'plus'
+  type: 'minus' | 'plus';
 }
