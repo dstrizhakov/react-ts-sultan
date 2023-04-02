@@ -1,9 +1,10 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { IProduct } from '../../models/IProduct';
 import { productAPI } from '../../services/ProductService';
 import { removeLocalProduct } from '../../store/reducers/Products/products.slice';
 import CreateProductForm from '../Admin/CreateEditProduct/CreateEditProduct';
+import Pagination from '../Pagination/Pagination';
 import ProductItem from '../ProductItem/ProductItem';
 import styles from './ProductList.module.css';
 
@@ -11,6 +12,9 @@ const ProductList: FC = () => {
   const dispatch = useAppDispatch();
 
   const [currentProducts, setCurrentProducts] = useState<IProduct[]>();
+  const [pagProducts, setPagProducts] = useState<IProduct[]>();
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [perPage, setPerPage] = useState<number>(6);
 
   const isAdmin = useAppSelector((state) => state.userReducer.isAdmin);
   const isOnline = useAppSelector((state) => state.userReducer.isServerOnline);
@@ -24,12 +28,14 @@ const ProductList: FC = () => {
 
   useEffect(() => {
     handleFilters();
-  }, [initialProducts, filterPrice, sort]);
+  }, [initialProducts, filterPrice, sort, currentPage]);
 
   const handleFilters = () => {
+    //фильтрация
     const filtered = initialProducts?.filter(
       (prod) => prod.price > filterPrice[0] && prod.price < filterPrice[1]
     );
+    //сортировка
     if (filtered) {
       let sortedProducts;
       if (sortTarget) {
@@ -42,6 +48,9 @@ const ProductList: FC = () => {
         );
       }
       setCurrentProducts(sortedProducts);
+      // пагинация
+      const result = [...sortedProducts].slice((currentPage - 1) * perPage, perPage * currentPage);
+      setPagProducts(result);
     }
   };
 
@@ -53,14 +62,30 @@ const ProductList: FC = () => {
     }
   };
 
+  const nextPage = useCallback(() => {
+    const totalPages = Math.ceil((currentProducts?.length || 0) / perPage);
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  }, [currentProducts, currentPage, perPage]);
+
+  const prevPage = useCallback(() => {
+    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+  }, [currentPage]);
+
   return (
     <div className={styles.wrapper}>
       {isAdmin && <CreateProductForm mode="create" />}
       <div className={styles.body}>
-        {currentProducts?.map((product) => (
+        {pagProducts?.map((product) => (
           <ProductItem key={product.id} remove={handleRemove} product={product} />
         ))}
       </div>
+      <Pagination
+        perPage={perPage}
+        totalItemsCount={currentProducts?.length || 0}
+        currentPage={currentPage}
+        nextPage={nextPage}
+        prevPage={prevPage}
+      />
     </div>
   );
 };
