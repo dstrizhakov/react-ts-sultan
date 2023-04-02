@@ -2,7 +2,7 @@
 
 ### Приложение работает как с сервером так и локально из json
 
-## [deploy]: (https://dstrizhakov.github.io/react-ts-sultan)
+[deploy]: (https://dstrizhakov.github.io/react-ts-sultan)
 
 Особенности:
 
