@@ -1,7 +1,7 @@
 {
   "name": "react-ts-sultan",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "1.0.0",
 	"homepage": "https://dstrizhakov.github.io/react-ts-sultan",
 	"proxy": "http://localhost:7000/",
   "type": "module",
