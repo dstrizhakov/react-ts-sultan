@@ -1,5 +1,4 @@
 .pagination {
-cursor: pointer;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -7,6 +6,7 @@ margin: 20px 0;
 }
 .pagination-prev, 
 .pagination-next {
+	cursor: pointer;
 margin: 0 20px;
 width: 12px;
 height: 12px;
@@ -30,7 +30,6 @@ padding: 4px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
 }
 .pagination-item.active {
 
