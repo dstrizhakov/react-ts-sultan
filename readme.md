@@ -2,7 +2,7 @@
 
 ### Приложение работает как с сервером так и локально из json
 
-## [deploy]: (https://dstrizhakov.github.io/react-ts-sultan)
+## [deploy](https://dstrizhakov.github.io/react-ts-sultan)
 
 Особенности:
 
@@ -11,7 +11,7 @@
 - Сервер на json-server
 - работа в оффлайн режиме с загрузкой данных из json файла
 
-Порядок работы.
+Порядок работы:
 
 - Установите зависимости командой 'npm install'
 - Запустите json server командой 'npm run server'
