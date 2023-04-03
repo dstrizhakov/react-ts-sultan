@@ -8,14 +8,14 @@ const Sort: FC = () => {
   const [sort, setSort] = useState([initalTarget, initialDirection]);
 
   const dispatch = useAppDispatch();
-
   const onTargetChange = () => {
     setSort(([target, direction]) => [!target, direction]);
-    dispatch(setSortParam(sort));
+    dispatch(setSortParam([!sort[0], sort[1]]));
   };
+
   const onDirectionChange = () => {
     setSort(([target, direction]) => [target, !direction]);
-    dispatch(setSortParam(sort));
+    dispatch(setSortParam([sort[0], !sort[1]]));
   };
 
   return (

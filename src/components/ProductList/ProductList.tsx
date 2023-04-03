@@ -22,6 +22,7 @@ const ProductList: FC = () => {
   const sort = useAppSelector((state) => state.filtersReducer.sort);
   const [sortTarget, sortDirection] = sort;
   const manufacturers = useAppSelector((store) => store.filtersReducer.manufacturers);
+  const selectedType = useAppSelector((store) => store.filtersReducer.type);
 
   const initialProducts = useAppSelector((state) => state.productReducer.products);
 
@@ -35,6 +36,10 @@ const ProductList: FC = () => {
     //фильтрация - производитель(если хотябы один из производителей выбран)
     if (Object.values(manufacturers).includes(true)) {
       filtered = filtered.filter((item) => manufacturers[item.manufacturer]);
+    }
+    //фильтрация по типу товара
+    if (selectedType) {
+      filtered = filtered.filter((item) => item.type.includes(selectedType));
     }
 
     //сортировка - название/цена
@@ -62,6 +67,7 @@ const ProductList: FC = () => {
     currentPage,
     perPage,
     manufacturers,
+    selectedType,
   ]);
 
   const handleRemove = (product: IProduct) => {
