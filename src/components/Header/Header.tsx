@@ -60,7 +60,7 @@ const Header: FC = () => {
             <BackCall isImg={true} variant="dark" />
             <Button text="Прайс-лист" img="download" />
             <Link to={'/order'}>
-              <Cart count={cartCount} total={cartTotal} />
+              <Cart count={cartCount} total={cartTotal} variant="large" />
             </Link>
           </div>
         </div>
