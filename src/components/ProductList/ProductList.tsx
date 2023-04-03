@@ -21,21 +21,23 @@ const ProductList: FC = () => {
   const filterPrice = useAppSelector((state) => state.filtersReducer.price);
   const sort = useAppSelector((state) => state.filtersReducer.sort);
   const [sortTarget, sortDirection] = sort;
+  const manufacturers = useAppSelector((store) => store.filtersReducer.manufacturers);
 
   const initialProducts = useAppSelector((state) => state.productReducer.products);
 
   const [deleteProduct, {}] = productAPI.useDeleteProductMutation();
 
   useEffect(() => {
-    handleFilters();
-  }, [initialProducts, filterPrice, sort, currentPage]);
-
-  const handleFilters = () => {
-    //фильтрация
-    const filtered = initialProducts?.filter(
+    //фильтрация - диапазон цен
+    let filtered = initialProducts.filter(
       (prod) => prod.price > filterPrice[0] && prod.price < filterPrice[1]
     );
-    //сортировка
+    //фильтрация - производитель(если хотябы один из производителей выбран)
+    if (Object.values(manufacturers).includes(true)) {
+      filtered = filtered.filter((item) => manufacturers[item.manufacturer]);
+    }
+
+    //сортировка - название/цена
     if (filtered) {
       let sortedProducts;
       if (sortTarget) {
@@ -52,7 +54,15 @@ const ProductList: FC = () => {
       const result = [...sortedProducts].slice((currentPage - 1) * perPage, perPage * currentPage);
       setPagProducts(result);
     }
-  };
+  }, [
+    initialProducts,
+    filterPrice,
+    sortDirection,
+    sortTarget,
+    currentPage,
+    perPage,
+    manufacturers,
+  ]);
 
   const handleRemove = (product: IProduct) => {
     if (!isOnline) {

@@ -1,5 +1,6 @@
 import { FC, useMemo, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { IProduct } from '../../../models/IProduct';
 import { setFilterPrice } from '../../../store/reducers/Filters/filters.slice';
 import CheckboxList from './CheckboxList/CheckboxList';
 import styles from './Filters.module.css';
@@ -18,14 +19,20 @@ const Filters: FC = () => {
     dispatch(setFilterPrice([low, high]));
   };
 
-  const options = useMemo(() => {
-    const result = new Set();
-    products.forEach((product) => {
-      result.add(product.manufacturer);
-    });
-    return [...result].map((item) => ({
-      name: item as string,
-      count: 10,
+  type ManufacturerCounts = {
+    [key: string]: number;
+  };
+
+  const manufacturers = useMemo(() => {
+    const manufacturerCounts = products.reduce((counts: ManufacturerCounts, product: IProduct) => {
+      const manufacturer = product.manufacturer;
+      counts[manufacturer] = (counts[manufacturer] || 0) + 1;
+      return counts;
+    }, {});
+
+    return Object.entries(manufacturerCounts).map(([name, count]) => ({
+      name,
+      count,
     }));
   }, [products]);
 
@@ -47,7 +54,7 @@ const Filters: FC = () => {
       </div>
       <div className={styles.param}>
         <h4>Производитель</h4>
-        <CheckboxList options={options} />
+        <CheckboxList options={manufacturers} />
       </div>
     </div>
   );
