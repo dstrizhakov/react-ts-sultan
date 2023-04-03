@@ -4,6 +4,7 @@ import { IProduct } from '../../../models/IProduct';
 import { setFilterPrice } from '../../../store/reducers/Filters/filters.slice';
 import CheckboxList from './CheckboxList/CheckboxList';
 import styles from './Filters.module.css';
+import TypeList from './TypeList/TypeList';
 
 const Filters: FC = () => {
   const [min, max] = useAppSelector((state) => state.filtersReducer.price);
@@ -53,8 +54,10 @@ const Filters: FC = () => {
         </div>
       </div>
       <div className={styles.param}>
-        <h4>Производитель</h4>
+        <h4>Производитель:</h4>
         <CheckboxList options={manufacturers} />
+        <h4>Тип:</h4>
+        <TypeList variant="vertical" />
       </div>
     </div>
   );

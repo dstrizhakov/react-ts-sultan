@@ -18,6 +18,9 @@ export const filtersSlice = createSlice({
     setFilterType: (state, action: PayloadAction<string>) => {
       state.type = action.payload;
     },
+    resetFilterType: (state) => {
+      state.type = '';
+    },
     setFilterManufact: (state, action: PayloadAction<{ [key: string]: boolean }>) => {
       state.manufacturers = action.payload;
     },
@@ -27,6 +30,6 @@ export const filtersSlice = createSlice({
   },
 });
 
-export const { setFilterPrice, setSortParam, setFilterType, setFilterManufact } =
+export const { setFilterPrice, setSortParam, setFilterType, resetFilterType, setFilterManufact } =
   filtersSlice.actions;
 export default filtersSlice.reducer;

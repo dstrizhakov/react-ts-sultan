@@ -16,6 +16,7 @@ type ProductFormPropsType = {
 
 const ProductForm: FC<ProductFormPropsType> = ({ product, action, setIsOpen }) => {
   const isOnline = useAppSelector((state) => state.userReducer.isServerOnline);
+  const types = useAppSelector((store) => store.productReducer.types);
   const dispatch = useAppDispatch();
 
   const [title, setTitle] = useState<string>(product ? product.title : '');
@@ -26,8 +27,15 @@ const ProductForm: FC<ProductFormPropsType> = ({ product, action, setIsOpen }) =
   const [barcode, setBarcode] = useState<string>(product ? product.barcode : '');
   const [manufacturer, setManufacturer] = useState<string>(product ? product.manufacturer : '');
   const [brand, setBrand] = useState<string>(product ? product.brand : '');
-  const [type, setType] = useState<string[]>([]);
+  const [type, setType] = useState<string[]>(product ? product?.type : []);
   const [price, setPrice] = useState<number>(product ? product.price : 0);
+
+  const [selectedTypes, setSelectedTypes] = useState<string[]>(product ? product?.type : []);
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOptions = Array.from(e.target.selectedOptions).map((option) => option.value);
+    setSelectedTypes(selectedOptions);
+  };
 
   const [updateProduct, { error: updateError, isLoading: updateIsLoading }] =
     productAPI.useUpdateProductMutation();
@@ -64,7 +72,7 @@ const ProductForm: FC<ProductFormPropsType> = ({ product, action, setIsOpen }) =
       manufacturer,
       brand,
       description,
-      type,
+      type: selectedTypes,
       price,
     };
 
@@ -76,7 +84,7 @@ const ProductForm: FC<ProductFormPropsType> = ({ product, action, setIsOpen }) =
     event.preventDefault();
     setIsOpen(false);
   };
-
+  console.log();
   return (
     <form className={styles.body}>
       <input
@@ -134,12 +142,25 @@ const ProductForm: FC<ProductFormPropsType> = ({ product, action, setIsOpen }) =
         />
       </div>
       <div className={styles.row}>
-        <input
+        {/* <input
           type="type"
           placeholder="Тип"
           value={type.join(',')}
           onChange={(e) => setType(e.currentTarget.value.split(','))}
-        />
+        /> */}
+        <select multiple value={selectedTypes} onChange={handleSelectChange}>
+          {types.map((t) =>
+            type.includes(t) ? (
+              <option key={t} selected value={t}>
+                {t}
+              </option>
+            ) : (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            )
+          )}
+        </select>
         <input
           type="price"
           placeholder="Цена"

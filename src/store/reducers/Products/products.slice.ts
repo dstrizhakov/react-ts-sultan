@@ -23,6 +23,12 @@ export const productsSlice = createSlice({
     setLocalTypes: (state, action: PayloadAction<string[]>) => {
       state.types = action.payload;
     },
+    addLocalType: (state, action: PayloadAction<string>) => {
+      state.types = [...state.types, action.payload];
+    },
+    removeLocalType: (state, action: PayloadAction<string>) => {
+      state.types = state.types.filter((type) => type !== action.payload);
+    },
     removeLocalProduct: (state, action: PayloadAction<number>) => {
       console.log(action.payload);
       state.products = state.products.filter((product) => product.id !== action.payload);
@@ -48,5 +54,7 @@ export const {
   removeLocalProduct,
   changeLocalProduct,
   addLocalProduct,
+  addLocalType,
+  removeLocalType,
 } = productsSlice.actions;
 export default productsSlice.reducer;

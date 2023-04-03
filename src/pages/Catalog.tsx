@@ -15,7 +15,7 @@ const Catalog: FC = () => {
         <h2>Косметика и гигиена</h2>
         <Sort />
       </div>
-      <TypeList />
+      <TypeList variant="horizontal" />
       <div className="calalog">
         <Filters />
         <ProductListContainer />
