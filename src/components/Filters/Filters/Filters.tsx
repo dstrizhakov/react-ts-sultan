@@ -1,10 +1,13 @@
-import { FC, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { setFilterPrice } from '../../../store/reducers/Filters/filters.slice';
+import CheckboxList from './CheckboxList/CheckboxList';
 import styles from './Filters.module.css';
 
 const Filters: FC = () => {
   const [min, max] = useAppSelector((state) => state.filtersReducer.price);
+  const products = useAppSelector((state) => state.productReducer.products);
+
   const [low, setLow] = useState(min);
   const [high, setHigh] = useState(max);
 
@@ -14,6 +17,17 @@ const Filters: FC = () => {
     e.preventDefault();
     dispatch(setFilterPrice([low, high]));
   };
+
+  const options = useMemo(() => {
+    const result = new Set();
+    products.forEach((product) => {
+      result.add(product.manufacturer);
+    });
+    return [...result].map((item) => ({
+      name: item as string,
+      count: 10,
+    }));
+  }, [products]);
 
   return (
     <div className={styles.body}>
@@ -30,6 +44,10 @@ const Filters: FC = () => {
             <button type="submit"></button>
           </form>
         </div>
+      </div>
+      <div className={styles.param}>
+        <h4>Производитель</h4>
+        <CheckboxList options={options} />
       </div>
     </div>
   );
