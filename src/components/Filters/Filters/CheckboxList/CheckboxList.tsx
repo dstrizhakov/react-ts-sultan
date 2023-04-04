@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { useAppDispatch } from '../../../../hooks/redux';
 import { setFilterManufact } from '../../../../store/reducers/Filters/filters.slice';
 import Checkbox from '../Checkbox/Checkbox';
+import styles from './CheckboxList.module.css';
 
 export interface IOption {
   name: string;
@@ -24,7 +25,7 @@ const CheckboxList: FC<ICheckboxList> = ({ options }) => {
   }, [checkedItems]);
 
   return (
-    <div>
+    <div className={styles.list}>
       {options.map((option) => (
         <Checkbox
           key={option.name}

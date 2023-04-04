@@ -27,3 +27,10 @@
 	border: 5px solid transparent; 
 	border-top: 7px solid #3F4E65;
 }
+
+@media (max-width: 992px) {
+	.body{
+		flex: 0 0 auto;
+		margin-bottom: 30px;
+	}
+}

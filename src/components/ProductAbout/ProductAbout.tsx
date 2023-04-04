@@ -8,6 +8,7 @@ import { useAppDispatch } from '../../hooks/redux';
 import { addToCart } from '../../store/reducers/Cart/cart.slice';
 import subscIcon from '../../assets/icons/subsc.svg';
 import downloadIcon from '../../assets/icons/download.svg';
+import BackButton from '../BackButton/BackButton';
 
 type ProductAboutPropsType = {
   product: IProduct;
@@ -32,6 +33,9 @@ const ProductAbout: FC<ProductAboutPropsType> = ({ product }) => {
 
   return (
     <div className={styles.body}>
+      <div className="back-button">
+        <BackButton />
+      </div>
       <div className={styles.row}>
         <div className={styles.image}>
           <img src={product.img} alt={product.title} />

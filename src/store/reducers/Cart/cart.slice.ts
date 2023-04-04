@@ -14,7 +14,6 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<ICartItem>) => {
-      console.log(action.payload);
       const itemIndex = state.cartList.findIndex((item) => item.id === action.payload.id);
       itemIndex >= 0
         ? (state.cartList[itemIndex].count += action.payload.count)
@@ -26,7 +25,6 @@ export const cartSlice = createSlice({
       cartSlice.caseReducers.calculateCountAndPrice(state);
     },
     changeCount: (state, action: PayloadAction<IChangeQuantityPayload>) => {
-      console.log(action.payload);
       const { id, type } = action.payload;
       const item = state.cartList.find((item) => item.id === id);
       if (item) {

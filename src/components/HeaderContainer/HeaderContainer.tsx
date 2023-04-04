@@ -9,10 +9,10 @@ function HeaderContainer() {
 
   return (
     <>
-      {isDesktop && <Header/>}
-      {isTablet && <HeaderMobile/>}
-      {isMobile && <HeaderMobile/>}
+      {isDesktop && <Header />}
+      {isTablet && <HeaderMobile />}
+      {isMobile && <HeaderMobile />}
     </>
-  )
+  );
 }
 export default HeaderContainer;

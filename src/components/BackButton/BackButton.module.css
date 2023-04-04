@@ -1,0 +1,32 @@
+.body {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.body span{
+	font-weight: 600;
+	font-size: 10px;
+	line-height: 120%;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #3F4E65;
+}
+.back {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #FFC85E;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.back img {
+transform: rotate(180deg);
+width: 6px;
+filter: brightness(0.3);
+transition: all 0.3s ease 0s;
+}

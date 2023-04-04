@@ -11,7 +11,7 @@ type CartPropsType = {
 const Cart: FC<CartPropsType> = ({ count, total, variant }) => {
   return (
     <div className={styles.order}>
-      <div className={styles.busket}>
+      <div className={variant === 'large' ? styles.busket : styles.busketSmall}>
         <img src={busketIcon} alt="busketIcon" />
         <span>{count}</span>
       </div>

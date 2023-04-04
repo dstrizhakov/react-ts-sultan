@@ -186,3 +186,66 @@ gap:10px;
 		opacity: 0.4;
 		width: 270px;
 	}
+
+	@media (max-width: 992px) {
+		.body {
+			margin: 30px 0;
+			}
+			.row {
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+			
+			.image {
+				flex: 0 0 90%;
+				height: 180px;
+			}
+	
+			
+			.content {
+				margin-left: 0;
+			}
+			.content h4 {
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 150%;
+				color: #111111;
+				white-space: normal;
+			}
+			.content h4 span {
+				font-weight: 800;
+			}
+			.status {
+				font-weight: 500;
+				font-size: 14px;
+				line-height: 130%;
+				color: #1FD85D;
+			}
+			.actions {
+				display: inline-flex;
+		justify-content: center;
+				column-gap: 50px;
+				flex-wrap: wrap;
+			}
+			.price {
+				font-size: 20px;
+			}
+		
+			.catalog {
+				margin-top: 20px;
+				margin-bottom: 35px;
+				flex-wrap: wrap;
+				display: inline-flex;
+			}
+			.sub {
+				flex: 0 0 100%;
+			}
+			.sale {
+				flex: 0 0 100%;
+			}
+			.cat {
+				flex: 0 0 100%;
+			}
+			
+	}

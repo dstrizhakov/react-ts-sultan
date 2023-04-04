@@ -1,5 +1,9 @@
 .header {
 	margin: 5px 0;
+	/* position: fixed;
+	width: 100%;
+	background: white;
+	z-index: 99; */
 }
 .border {
 	border-bottom:1px solid #3f4e6534;

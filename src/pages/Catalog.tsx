@@ -3,25 +3,10 @@ import Filters from '../components/Filters/Filters/Filters';
 import TypeList from '../components/Filters/Filters/TypeList/TypeList';
 import Sort from '../components/Filters/Sort/Sort';
 import ProductListContainer from '../components/ProductListContainer/ProductListContainer';
+import CatalogLayout from '../layouts/CatalogLayout/CatalogLayout';
 
 const Catalog: FC = () => {
-  return (
-    <main className="main">
-      <div className="breadcrumbs">
-        <p>Главная</p>
-        <span>Каталог</span>
-      </div>
-      <div className="row">
-        <h2>Косметика и гигиена</h2>
-        <Sort />
-      </div>
-      <TypeList variant="horizontal" />
-      <div className="calalog">
-        <Filters />
-        <ProductListContainer />
-      </div>
-    </main>
-  );
+  return <CatalogLayout />;
 };
 
 export default Catalog;
