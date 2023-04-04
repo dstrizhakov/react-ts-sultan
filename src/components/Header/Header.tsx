@@ -57,10 +57,12 @@ const Header: FC = () => {
                 <img src={searchIcon} alt="searchIcon" />
               </span>
             </div>
-            <BackCall isImg={true} variant="dark" />
+            <div className={styles.call}>
+              <BackCall isImg={true} variant="dark" />
+            </div>
             <Button text="Прайс-лист" img="download" />
             <Link to={'/order'}>
-              <Cart count={cartCount} total={cartTotal} />
+              <Cart count={cartCount} total={cartTotal} variant="large" />
             </Link>
           </div>
         </div>

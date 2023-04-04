@@ -94,3 +94,15 @@ text-decoration: underline;
 	align-items: center;
 	justify-content: center;
 }
+
+@media (max-width: 1270px) {
+	.contacts {
+		display: none;
+	}
+	.search {
+		display: none;
+	}
+	.call {
+		display: none;
+	}
+}

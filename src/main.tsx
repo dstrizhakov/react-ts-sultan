@@ -8,7 +8,7 @@ const store = setupStore();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename="/react-ts-sultan">
       <App />
     </BrowserRouter>
   </Provider>

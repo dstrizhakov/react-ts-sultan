@@ -26,6 +26,27 @@
 	color: #FFFFFF;
 	font-weight: 700;
 }
+.busketSmall img {
+ height: 25px;
+}
+.busketSmall span {
+	position: absolute;
+	background-color: #FFC85E;
+	border: 3px solid #FFFFFF;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	right: 3px;
+	top:3px;
+	font-size: 10px;
+	line-height: 17px;
+	text-align: center;
+	color: #FFFFFF;
+	font-weight: 700;
+}
 
 .details p {
 	font-weight: 300;
@@ -38,4 +59,7 @@
 	line-height: 150%;
 	color: #111111;
 	font-weight: 600;
+}
+.none {
+	display: none;;
 }

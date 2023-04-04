@@ -1,18 +1,20 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
+import FooterLayout from '../../layouts/FooterLayout/FooterLayout';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import HeaderContainer from '../HeaderContainer/HeaderContainer';
 
 const Layout: FC = () => {
   return (
     <div className="wrapper">
-      <Header />
+      <HeaderContainer />
       <main className="main">
         <div className="container">
           <Outlet />
         </div>
       </main>
-      <Footer />
+      <FooterLayout />
     </div>
   );
 };

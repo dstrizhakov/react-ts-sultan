@@ -1,0 +1,47 @@
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	margin: 20px 0;
+}
+.row {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-items: flex-start;
+	margin: 10px 0;
+}
+.all {
+	border-radius: 8px;
+	padding: 5px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: #3F4E65;
+	cursor: pointer;
+}	
+.form {
+	display: flex;
+	gap: 5px;
+}
+.form input {
+padding: 5px;
+border: 2px solid  #FFC85E;
+border-radius: 4px;
+}
+.form button {
+	cursor: pointer;
+	color: white;
+	background-color: #FFC85E;
+	border: none;
+	padding: 5px;
+	border-radius: 4px;
+	transition: all 0.3s ease 0s;
+	}
+	.form button:hover {
+		background-color: #fbb323;
+		}
+.none {
+	display: none;
+}

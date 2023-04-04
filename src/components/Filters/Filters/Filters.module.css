@@ -1,4 +1,5 @@
 .body {
+	width: 100%;
 	flex: 0 0 230px;
 	line-height: 150%;
 	color: #111111;
@@ -6,10 +7,10 @@
 .body h4 {
 	font-weight: 500;
 	font-size: 16px;
-
 }
 .param {
 	margin-top: 10px;
+	transition: all 0.3s ease 0s;
 }
 .param h5 {
 	font-weight: 300;
@@ -27,6 +28,8 @@
 .form {
 	display: flex;
 	justify-content: space-between;
+	gap: 10px;
+	max-width: 280px;
 }
 .form button {
 	width: 0;
@@ -44,4 +47,53 @@
 	font-size: 12px;
 	line-height: 15px;
 	color: #3F4E65;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+.none {
+	height: 0;
+	overflow: hidden;
+	transition: all 0.3s ease 0s;
+}
+
+.hide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #FFC85E;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.hide img {
+transform: rotate(90deg);
+width: 6px;
+filter: brightness(0.3);
+transition: all 0.3s ease 0s;
+}
+.hideActive {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #FFC85E;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.hideActive img {
+transform: rotate(-90deg);
+filter: brightness(0.3);
+width: 6px;
+transition: all 0.3s ease 0s;
 }

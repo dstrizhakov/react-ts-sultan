@@ -26,7 +26,7 @@ const ProductListContainer: FC = () => {
     <div className={styles.wrapper}>
       <div className={styles.body}>
         {isLoading && <h3>Загрузка...</h3>}
-        {error && <h3>Сервер не доступен! Данные загружены из JSON...</h3>}
+        {/* {error && <h3>Сервер не доступен! Данные загружены из JSON...</h3>} */}
       </div>
       <ProductList />
     </div>

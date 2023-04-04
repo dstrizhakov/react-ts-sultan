@@ -25,3 +25,15 @@ margin-bottom: 100px;
 .total::after {
 		content: '₸';
 }
+
+@media (max-width: 992px) {
+	.summary {
+		flex-direction: column-reverse;
+		margin-bottom: 0;
+		gap: 30px;
+
+	}
+	.total {
+		flex:  0 0 100%;
+	}
+}

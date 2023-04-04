@@ -3,10 +3,12 @@ import { IProduct } from '../../../models/IProduct';
 
 interface IProductListType {
   products: IProduct[];
+  types: string[];
 }
 
 const initialState: IProductListType = {
   products: [],
+  types: [],
 };
 
 export const productsSlice = createSlice({
@@ -15,6 +17,17 @@ export const productsSlice = createSlice({
   reducers: {
     setLocalProducts: (state, action: PayloadAction<IProduct[]>) => {
       state.products = action.payload;
+      const uniqueTypes = Array.from(new Set(state.products.flatMap((product) => product.type)));
+      state.types = uniqueTypes;
+    },
+    setLocalTypes: (state, action: PayloadAction<string[]>) => {
+      state.types = action.payload;
+    },
+    addLocalType: (state, action: PayloadAction<string>) => {
+      state.types = [...state.types, action.payload];
+    },
+    removeLocalType: (state, action: PayloadAction<string>) => {
+      state.types = state.types.filter((type) => type !== action.payload);
     },
     removeLocalProduct: (state, action: PayloadAction<number>) => {
       console.log(action.payload);
@@ -35,6 +48,13 @@ export const productsSlice = createSlice({
   },
 });
 
-export const { setLocalProducts, removeLocalProduct, changeLocalProduct, addLocalProduct } =
-  productsSlice.actions;
+export const {
+  setLocalProducts,
+  setLocalTypes,
+  removeLocalProduct,
+  changeLocalProduct,
+  addLocalProduct,
+  addLocalType,
+  removeLocalType,
+} = productsSlice.actions;
 export default productsSlice.reducer;

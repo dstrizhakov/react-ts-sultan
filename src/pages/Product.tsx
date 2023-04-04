@@ -13,7 +13,6 @@ const Product: FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const product = undefined;
   // const { error, isLoading, data: product } = productAPI.useFetchOneProductQuery(Number(id));
   const localProducts = useAppSelector((state) => state.productReducer.products);
   // const isOnline = useAppSelector((state) => state.userReducer.isServerOnline);
