@@ -36,7 +36,9 @@ const CartList: FC = () => {
       {totalCount ? (
         <div className={styles.summary}>
           <Button text="Оформить заказ" type="small" onClick={completeOrder} />
-          <span className={styles.total}>{cartTotal}</span>
+          <span className={styles.total} data-testid="cart-total">
+            {cartTotal}
+          </span>
         </div>
       ) : (
         <h3>Корзина пуста...</h3>
