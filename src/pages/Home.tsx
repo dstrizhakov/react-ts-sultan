@@ -6,7 +6,7 @@ const Home: FC = () => {
       <div className="breadcrumbs">
         <p>Главная</p>
       </div>
-      <h2>Главная</h2>
+      <h2 data-testid="page-title">Главная</h2>
     </main>
   );
 };

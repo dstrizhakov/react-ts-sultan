@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 import { setFilterType, resetFilterType } from '../../../../store/reducers/Filters/filters.slice';
 import { addLocalType } from '../../../../store/reducers/Products/products.slice';
@@ -14,11 +14,6 @@ const TypeList: FC<TypeListPropsType> = ({ variant }) => {
   const isAdmin = useAppSelector((state) => state.userReducer.isAdmin);
   const dispatch = useAppDispatch();
 
-  // const [currenTypes, setCurrenTypes] = useState(types);
-  // useEffect(() => {
-  //   setCurrenTypes(types);
-  // }, [types]);
-
   const [input, setInput] = useState('');
 
   const handleClick = (title: string) => {
@@ -27,10 +22,9 @@ const TypeList: FC<TypeListPropsType> = ({ variant }) => {
   const handleReset = () => {
     dispatch(resetFilterType());
   };
-  // const onInputChangeHandler = (event) => {};
-  const onSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
+
+  const onSubmit = () => {
     dispatch(addLocalType(input));
-    console.log(input);
   };
   return (
     <div className={variant === 'horizontal' ? styles.list : styles.row}>

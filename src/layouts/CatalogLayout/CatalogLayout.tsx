@@ -21,7 +21,7 @@ function CatalogLayout() {
             <span>Каталог</span>
           </div>
           <div className="row">
-            <h2>Косметика и гигиена</h2>
+            <h2 data-testid="page-title">Косметика и гигиена</h2>
             <Sort />
           </div>
           <TypeList variant="horizontal" />

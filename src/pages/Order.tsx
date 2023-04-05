@@ -12,7 +12,7 @@ const Order: FC = () => {
       <div className="back-button">
         <BackButton />
       </div>
-      <h2>Корзина</h2>
+      <h2 data-testid="page-title">Корзина</h2>
       <div className="cart__list">
         <CartList />
       </div>
