@@ -10,7 +10,7 @@ import styles from './ProductListContainer.module.css';
 const ProductListContainer: FC = () => {
   const dispatch = useAppDispatch();
 
-  const { error, isLoading, data: products } = productAPI.useFetchAllProductsQuery(100);
+  const { isLoading, data: products } = productAPI.useFetchAllProductsQuery(100);
 
   useEffect(() => {
     if (products) {
@@ -24,10 +24,7 @@ const ProductListContainer: FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.body}>
-        {isLoading && <h3>Загрузка...</h3>}
-        {/* {error && <h3>Сервер не доступен! Данные загружены из JSON...</h3>} */}
-      </div>
+      <div className={styles.body}>{isLoading && <h3>Загрузка...</h3>}</div>
       <ProductList />
     </div>
   );

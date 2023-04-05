@@ -1,6 +1,7 @@
 import styles from './BurgerMenu.module.css';
 import BackCall from '../../BackCall/BackCall';
 import Contact from '../../Contact/Contact';
+import SwitchAdmin from '../../Admin/SwitchAdmin/SwitchAdmin';
 
 const BurgerMenu = () => {
   return (
@@ -25,6 +26,7 @@ const BurgerMenu = () => {
           </a>
         </div>
       </div>
+      <SwitchAdmin />
     </div>
   );
 };

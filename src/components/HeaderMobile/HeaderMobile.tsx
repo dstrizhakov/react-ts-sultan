@@ -6,7 +6,6 @@ import styles from './HeaderMobile.module.css';
 import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
-import SwitchAdmin from '../Admin/SwitchAdmin/SwitchAdmin';
 import Burger from '../Burger/Burger';
 
 const HeaderMobile: FC = () => {
