@@ -1,0 +1,496 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Order > should create Order with cart list 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <main
+        class="main"
+      >
+        <div
+          class="breadcrumbs"
+        >
+          <p>
+            Главная
+          </p>
+          <span>
+            Корзина
+          </span>
+        </div>
+        <div
+          class="back-button"
+        >
+          <div
+            class="_body_7349eb"
+          >
+            <div
+              class="_back_7349eb"
+            >
+              <img
+                alt="arrowIcon"
+                src="/react-ts-sultan/src/assets/icons/arrow.svg"
+              />
+            </div>
+            <span>
+              Назад
+            </span>
+          </div>
+        </div>
+        <h2
+          data-testid="page-title"
+        >
+          Корзина
+        </h2>
+        <div
+          class="cart__list"
+        >
+          <div
+            class="_wrapper_806c07"
+          >
+            <div
+              class="modal"
+            >
+              <div
+                class="modal__content"
+              >
+                <h3>
+                  Спасибо за заказ!
+                </h3>
+              </div>
+            </div>
+            <div
+              class="_body_806c07"
+            >
+              <div
+                class="_body_61ad6d"
+              >
+                <div
+                  class="_row_61ad6d"
+                >
+                  <div
+                    class="_image_61ad6d"
+                  >
+                    <img
+                      alt="product image"
+                      src="https://ir.ozone.ru/multimedia/wc1000/1023617947.jpg"
+                    />
+                  </div>
+                  <div
+                    class="_content_61ad6d"
+                  >
+                    <div
+                      class="_valueType_61ad6d"
+                    >
+                      <img
+                        alt="value type"
+                        src="/react-ts-sultan/src/assets/icons/box.svg"
+                      />
+                      <span>
+                        2000 г
+                      </span>
+                    </div>
+                    <h4
+                      data-testid="product-title"
+                    >
+                      Порошок стиральный Posh One White
+                    </h4>
+                    <p>
+                      Основные свойства: - концентрированный стиральный порошок для эффективной стирки белого белья; - адаптирован для стирки детского белья (не содержит эко-токсичных компонентов и нерастворимых наполнителей (цеолитов); - без фосфатов, без сульфанолов, без хлора, без оптических отбеливателей; - содержит кислородный эко-отбеливатель TOTAL OXYGEN®;
+                    </p>
+                  </div>
+                  <div
+                    class="_quantuty_61ad6d"
+                  >
+                    <button>
+                      -
+                    </button>
+                    <span
+                      data-testid="item-count"
+                    >
+                      1
+                    </span>
+                    <button>
+                      +
+                    </button>
+                  </div>
+                  <div
+                    class="_price_61ad6d"
+                  >
+                    200
+                  </div>
+                  <div
+                    class="_remove_61ad6d"
+                  >
+                    <button>
+                      <img
+                        alt="remove item"
+                        src="/react-ts-sultan/src/assets/icons/delete.svg"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_body_61ad6d"
+              >
+                <div
+                  class="_row_61ad6d"
+                >
+                  <div
+                    class="_image_61ad6d"
+                  >
+                    <img
+                      alt="product image"
+                      src="https://ir.ozone.ru/s3/multimedia-q/wc1000/6101729258.jpg"
+                    />
+                  </div>
+                  <div
+                    class="_content_61ad6d"
+                  >
+                    <div
+                      class="_valueType_61ad6d"
+                    >
+                      <img
+                        alt="value type"
+                        src="/react-ts-sultan/src/assets/icons/bottle.svg"
+                      />
+                      <span>
+                        450 мл
+                      </span>
+                    </div>
+                    <h4
+                      data-testid="product-title"
+                    >
+                      Стиральный порошок Аквапудра Color, автомат
+                    </h4>
+                    <p>
+                      Безупречная чистота и приятный аромат одежды дарят прекрасное настроение и уверенность в себе, поэтому очень важно уделять должное внимание стирке. Именно для этого мы создали стиральный порошок Ariel Аквапудра для цветного белья. Ariel Аквапудра растворяется, едва коснувшись воды, и моментально активируется: удаляет трудновыводимые пятна, глубоко проникая в структуру волокон, и не дает загрязнениям въедаться. Порошок устраняет загрязнения, вызывающие неприятные запахи, такие как запах пота и тела, придавая одежде приятный аромат и сияющую чистоту даже на воротничках и манжетах рубашек.
+                    </p>
+                  </div>
+                  <div
+                    class="_quantuty_61ad6d"
+                  >
+                    <button>
+                      -
+                    </button>
+                    <span
+                      data-testid="item-count"
+                    >
+                      2
+                    </span>
+                    <button>
+                      +
+                    </button>
+                  </div>
+                  <div
+                    class="_price_61ad6d"
+                  >
+                    120
+                  </div>
+                  <div
+                    class="_remove_61ad6d"
+                  >
+                    <button>
+                      <img
+                        alt="remove item"
+                        src="/react-ts-sultan/src/assets/icons/delete.svg"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="_summary_806c07"
+            >
+              <div
+                class="_buttonSmall_2a1efe"
+              >
+                <span>
+                  Оформить заказ
+                </span>
+              </div>
+              <span
+                class="_total_806c07"
+                data-testid="cart-total"
+              >
+                440
+              </span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>,
+  "container": <div>
+    <main
+      class="main"
+    >
+      <div
+        class="breadcrumbs"
+      >
+        <p>
+          Главная
+        </p>
+        <span>
+          Корзина
+        </span>
+      </div>
+      <div
+        class="back-button"
+      >
+        <div
+          class="_body_7349eb"
+        >
+          <div
+            class="_back_7349eb"
+          >
+            <img
+              alt="arrowIcon"
+              src="/react-ts-sultan/src/assets/icons/arrow.svg"
+            />
+          </div>
+          <span>
+            Назад
+          </span>
+        </div>
+      </div>
+      <h2
+        data-testid="page-title"
+      >
+        Корзина
+      </h2>
+      <div
+        class="cart__list"
+      >
+        <div
+          class="_wrapper_806c07"
+        >
+          <div
+            class="modal"
+          >
+            <div
+              class="modal__content"
+            >
+              <h3>
+                Спасибо за заказ!
+              </h3>
+            </div>
+          </div>
+          <div
+            class="_body_806c07"
+          >
+            <div
+              class="_body_61ad6d"
+            >
+              <div
+                class="_row_61ad6d"
+              >
+                <div
+                  class="_image_61ad6d"
+                >
+                  <img
+                    alt="product image"
+                    src="https://ir.ozone.ru/multimedia/wc1000/1023617947.jpg"
+                  />
+                </div>
+                <div
+                  class="_content_61ad6d"
+                >
+                  <div
+                    class="_valueType_61ad6d"
+                  >
+                    <img
+                      alt="value type"
+                      src="/react-ts-sultan/src/assets/icons/box.svg"
+                    />
+                    <span>
+                      2000 г
+                    </span>
+                  </div>
+                  <h4
+                    data-testid="product-title"
+                  >
+                    Порошок стиральный Posh One White
+                  </h4>
+                  <p>
+                    Основные свойства: - концентрированный стиральный порошок для эффективной стирки белого белья; - адаптирован для стирки детского белья (не содержит эко-токсичных компонентов и нерастворимых наполнителей (цеолитов); - без фосфатов, без сульфанолов, без хлора, без оптических отбеливателей; - содержит кислородный эко-отбеливатель TOTAL OXYGEN®;
+                  </p>
+                </div>
+                <div
+                  class="_quantuty_61ad6d"
+                >
+                  <button>
+                    -
+                  </button>
+                  <span
+                    data-testid="item-count"
+                  >
+                    1
+                  </span>
+                  <button>
+                    +
+                  </button>
+                </div>
+                <div
+                  class="_price_61ad6d"
+                >
+                  200
+                </div>
+                <div
+                  class="_remove_61ad6d"
+                >
+                  <button>
+                    <img
+                      alt="remove item"
+                      src="/react-ts-sultan/src/assets/icons/delete.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="_body_61ad6d"
+            >
+              <div
+                class="_row_61ad6d"
+              >
+                <div
+                  class="_image_61ad6d"
+                >
+                  <img
+                    alt="product image"
+                    src="https://ir.ozone.ru/s3/multimedia-q/wc1000/6101729258.jpg"
+                  />
+                </div>
+                <div
+                  class="_content_61ad6d"
+                >
+                  <div
+                    class="_valueType_61ad6d"
+                  >
+                    <img
+                      alt="value type"
+                      src="/react-ts-sultan/src/assets/icons/bottle.svg"
+                    />
+                    <span>
+                      450 мл
+                    </span>
+                  </div>
+                  <h4
+                    data-testid="product-title"
+                  >
+                    Стиральный порошок Аквапудра Color, автомат
+                  </h4>
+                  <p>
+                    Безупречная чистота и приятный аромат одежды дарят прекрасное настроение и уверенность в себе, поэтому очень важно уделять должное внимание стирке. Именно для этого мы создали стиральный порошок Ariel Аквапудра для цветного белья. Ariel Аквапудра растворяется, едва коснувшись воды, и моментально активируется: удаляет трудновыводимые пятна, глубоко проникая в структуру волокон, и не дает загрязнениям въедаться. Порошок устраняет загрязнения, вызывающие неприятные запахи, такие как запах пота и тела, придавая одежде приятный аромат и сияющую чистоту даже на воротничках и манжетах рубашек.
+                  </p>
+                </div>
+                <div
+                  class="_quantuty_61ad6d"
+                >
+                  <button>
+                    -
+                  </button>
+                  <span
+                    data-testid="item-count"
+                  >
+                    2
+                  </span>
+                  <button>
+                    +
+                  </button>
+                </div>
+                <div
+                  class="_price_61ad6d"
+                >
+                  120
+                </div>
+                <div
+                  class="_remove_61ad6d"
+                >
+                  <button>
+                    <img
+                      alt="remove item"
+                      src="/react-ts-sultan/src/assets/icons/delete.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_summary_806c07"
+          >
+            <div
+              class="_buttonSmall_2a1efe"
+            >
+              <span>
+                Оформить заказ
+              </span>
+            </div>
+            <span
+              class="_total_806c07"
+              data-testid="cart-total"
+            >
+              440
+            </span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

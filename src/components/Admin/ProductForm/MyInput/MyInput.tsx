@@ -8,14 +8,14 @@ export interface IInputStateProps {
   error: string;
   isValid: boolean;
 }
-const MyInput: FC<IInputStateProps> = ({isValid, id, title, error, refer}) => {
-	return (
-		<div className={isValid ? 'input' : 'input error'}>
-		<label htmlFor={id}>{title}</label>
-		<input ref={refer} id={id} type="text" />
-		<span>{error}</span>
-	</div>
-	)
-}
+const MyInput: FC<IInputStateProps> = ({ isValid, id, title, error, refer }) => {
+  return (
+    <div className={isValid ? 'input' : 'input error'}>
+      <label htmlFor={id}>{title}</label>
+      <input ref={refer} id={id} type="text" />
+      <span>{error}</span>
+    </div>
+  );
+};
 
 export default MyInput;
