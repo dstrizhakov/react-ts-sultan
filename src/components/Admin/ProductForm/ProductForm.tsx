@@ -142,12 +142,6 @@ const ProductForm: FC<ProductFormPropsType> = ({ product, action, setIsOpen }) =
         />
       </div>
       <div className={styles.row}>
-        {/* <input
-          type="type"
-          placeholder="Тип"
-          value={type.join(',')}
-          onChange={(e) => setType(e.currentTarget.value.split(','))}
-        /> */}
         <select multiple value={selectedTypes} onChange={handleSelectChange}>
           {types.map((t) =>
             type.includes(t) ? (

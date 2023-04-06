@@ -5,7 +5,7 @@ import configureStore, { MockStoreEnhanced } from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { ICart } from '../models/ICart';
 import { Dispatch, AnyAction } from 'redux';
-import Order from './Order';
+import Order from '../pages/Order';
 
 const middlewares = [thunk];
 
@@ -73,5 +73,16 @@ describe('Order', () => {
       </BrowserRouter>
     );
     expect(screen.getByTestId('cart-total')).toHaveTextContent(/440/i);
+  });
+
+  it('should create Order with cart list', () => {
+    const component = render(
+      <BrowserRouter>
+        <Provider store={store}>
+          <Order />
+        </Provider>
+      </BrowserRouter>
+    );
+    expect(component).toMatchSnapshot();
   });
 });

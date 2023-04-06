@@ -35,12 +35,12 @@ const CartItem: FC<CartItemPropsType> = ({ item }) => {
             />
             <span>{item.product.value}</span>
           </div>
-          <h4>{item.product.title}</h4>
+          <h4 data-testid="product-title">{item.product.title}</h4>
           <p>{item.product.description}</p>
         </div>
         <div className={styles.quantuty}>
           <button onClick={decrement}>-</button>
-          <span>{item.count}</span>
+          <span data-testid="item-count">{item.count}</span>
           <button onClick={increment}>+</button>
         </div>
         <div className={styles.price}>{item.product.price}</div>

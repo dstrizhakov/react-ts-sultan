@@ -2,12 +2,12 @@ import { FC } from 'react';
 import styles from './Type.module.css';
 
 interface IType {
-  variant: 'vertical' | 'horizontal';
+  variant?: 'vertical' | 'horizontal';
   title: string;
   onClick: (title: string) => void;
 }
 
-const Type: FC<IType> = ({ title, onClick, variant }) => {
+const Type: FC<IType> = ({ title, onClick, variant = 'horizontal' }) => {
   const handleClick = () => {
     onClick(title);
   };
