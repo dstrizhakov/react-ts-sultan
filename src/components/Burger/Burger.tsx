@@ -11,13 +11,13 @@ const Burger = () => {
 
   return (
     <>
-      <div className={styles.button} onClick={onBurgerClick}>
+      <div data-testid="burger-button" className={styles.button} onClick={onBurgerClick}>
         <div className={!visible ? styles.burger : styles.burgerActive}>
           <span></span>
         </div>
       </div>
       {visible && (
-        <div className={styles.menu}>
+        <div data-testid="burger-menu" className={styles.menu}>
           <BurgerMenu />
         </div>
       )}

@@ -26,7 +26,6 @@ const BurgerMenu = () => {
           </a>
         </div>
       </div>
-      <SwitchAdmin />
     </div>
   );
 };
