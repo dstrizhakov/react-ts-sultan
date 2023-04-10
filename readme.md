@@ -6,7 +6,7 @@
 
 Особенности:
 
-- React, Redux-Toolkit, Redux-Toolkit, React-Router-Dom, Axios
+- React, Redux-Toolkit, React-Router-Dom, Axios
 - Контроль чистоты кода ESlint + Prettier
 - Сервер на json-server
 - работа в оффлайн режиме с загрузкой данных из json файла
